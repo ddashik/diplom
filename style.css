@@ -1,0 +1,283 @@
+/* Шрифты */
+@font-face {
+    font-family: 'TransformaMix';
+    src: url("fonts/TransformaMix_Trial-Medium.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kreadon';
+    src: url("fonts/Kreadon-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+/* Основные стили */
+body {
+    font-family: 'Kreadon';
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Шапка */
+header {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #ddd; /* Добавляем нижнюю границу */
+}
+
+h1, h2 {
+    font-family: 'TransformaMix' ;
+    color: #333;
+    font-weight: normal;
+    margin: 0; /* Убираем отступы */
+}
+
+/* Основная часть */
+main {
+    padding: 20px;
+    background-color: #f9f9f9; /* Добавляем фон */
+}
+
+/* Стили для главной секции */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #fff; /* Добавляем фон */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff; /* Добавляем белую рамку */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-family: 'TransformaMix';
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555; /* Цвет текста */
+}
+
+/* Стили для блока "Почему выбрать Карину Холд?" */
+.about {
+    margin-bottom: 40px;
+    background-color: #fff; /* Добавляем фон */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'TransformaMix';
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Увеличиваем отступ слева */
+    position: relative;
+}
+
+.about li::before {
+    content: '❤';
+    color: #ff1493; /* Цвет сердечка */
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Стили для галереи */
+.gallery {
+    margin-bottom: 40px;
+}
+
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Add this CSS for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Update gallery image styles */
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Add cursor pointer */
+}
+
+
+
+/* Стили для блока "Отзывы" */
+.testimonials {
+    margin-bottom: 40px;
+    background-color: #f9f9f9; /* Добавляем фон */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'TransformaMix';
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.testimonials-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.testimonials-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.testimonial p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555; /* Цвет текста */
+}
+
+.testimonial p:last-child {
+    margin-bottom: 0;
+}
+
+.testimonial cite {
+    font-style: italic;
+    color: #888;
+}
+
+/* Стили для блока "Контакты" */
+.contact {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #fff; /* Добавляем фон */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'TransformaMix';
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.contact p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555; /* Цвет текста */
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Увеличиваем отступ слева */
+    position: relative;
+}
+
+/*.contact li::before {*/
+/*    content: '✉';*/
+/*    color: #ff1493; !* Цвет иконки *!*/
+/*    margin-right: 10px;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*}*/
+
+/* Футер */
+footer {
+    background-color: #f9f9f9;
+    color: #555555;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #ddd;
+}
