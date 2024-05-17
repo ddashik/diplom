@@ -32,6 +32,7 @@ a:hover {
 }
 
 /* Шапка */
+/* Шапка */
 header {
     background-color: #f9f9f9;
     padding: 20px 0;
@@ -45,6 +46,32 @@ h1, h2 {
     color: #333;
     font-weight: normal;
     margin: 0; /* Убираем отступы */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Kreadon';
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
 }
 
 /* Основная часть */
@@ -194,7 +221,10 @@ main {
 
 .testimonials-slider {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: nowrap; /* Запретить перенос элементов на новую строку */
+    overflow-x: auto; /* Разрешить горизонтальную прокрутку */
+    justify-content: flex-start; /* Выравнивание элементов по левому краю */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
 }
 
 .testimonials-slider::-webkit-scrollbar {
@@ -280,4 +310,104 @@ footer {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-top: 2px solid #ddd;
+}
+
+
+/* Для мобильных устройств */
+@media screen and (max-width: 767px) {
+    /* Изменения для шапки */
+    header {
+        padding: 10px 0;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    /* Изменения для главной секции */
+    .hero {
+        padding: 20px;
+    }
+
+    .hero img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Изменения для блока "Почему выбрать Карину Холд?" */
+    .about {
+        padding: 20px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about li::before {
+        font-size: 18px;
+    }
+
+    /* Изменения для галереи */
+    .gallery .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    /* Изменения для блока "Отзывы" */
+    .testimonials {
+        padding: 20px;
+    }
+
+    .testimonials h2 {
+        font-size: 24px;
+    }
+
+    .testimonial {
+        width: fit-content;
+
+    }
+
+    .testimonial p {
+
+        font-size: 14px;
+        width: 150px;
+
+    }
+
+    /* Изменения для блока "Контакты" */
+    .contact {
+        padding: 20px;
+    }
+
+    .contact h2 {
+        font-size: 24px;
+    }
+
+    .contact p {
+        font-size: 14px;
+    }
+
+    .contact li::before {
+        font-size: 18px;
+    }
 }
