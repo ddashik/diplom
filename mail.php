@@ -1,11 +1,27 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Получение данных из формы
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-$to = "recipient@example.com";
-$sub = "Generic Mail";
-$msg = "Hello Geek! This is a generic email.";
-$headers = 'From: sender@example.com' . "\r\n" .'CC: another@example.com';
-if(mail($to,$sub,$msg,$headers))
-    echo "Your Mail is sent successfully.";
-else
-    echo "Your Mail is not sent. Try Again.";
+    // Установка адреса получателя и заголовков письма
+    $to = "krainukovaleksandr@gmail.com";
+    $subject = "Новое сообщение с контактной формы";
+    $headers = "From: $email" . "\r\n" .
+        "Reply-To: $email" . "\r\n" .
+        "Content-Type: text/plain; charset=utf-8";
+
+    // Текст письма
+    $body = "Имя: $name\nEmail: $email\n\nСообщение:\n$message";
+
+    // Отправка письма
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Сообщение отправлено успешно.";
+    } else {
+        echo "Ошибка при отправке сообщения.";
+    }
+} else {
+    echo "Некорректный метод запроса.";
+}
 ?>
